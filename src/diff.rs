@@ -4,13 +4,14 @@ use std::io::BufReader;
 use std::io::prelude::*;
 use std::{fs, u8};
 
-
+#[derive(Clone)]
 pub enum ChangeType {
     Add,
     Delete,
     Modify,
 }
 
+#[derive(Clone)]
 pub struct FileDiff {
     pub path: PathBuf,
     pub change_type: ChangeType,
